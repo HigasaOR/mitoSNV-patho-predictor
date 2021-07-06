@@ -1,0 +1,77 @@
+Starting,Ending,Official Symbol,Shorthand,Gene,Gene type,Ensembl transcript ID,Orientation,Codon_recognized,protein_accession,Description,Reference
+57,372,MT-HV2,CR:HVS2,,Control Region,,,,,Hypervariable segment 2 [classic:73-340 ],3
+57,57,MT-OHR57,CR:OH57,,Control Region,,,,,H-strand origin,1
+110,441,MT-OHR,CR:OH,,Control Region,,,,,H-strand origins,4
+213,235,MT-CSB1,CR:CSB1,,Control Region,,,,,Conserved sequence block 1,2
+233,260,MT-TFX,CR:TFX,,Control Region,,,,,mtTF1 binding site,1
+276,303,MT-TFY,CR:TFY,,Control Region,,,,,mtTF1 binding site,1
+299,315,MT-CSB2,CR:CSB2,,Control Region,,,,,Conserved sequence block 2,3
+317,321,MT-HPR,CR:HPR,,Control Region,,,,,replication primer,2
+346,363,MT-CSB3,CR:CSB3,,Control Region,,,,,Conserved sequence block 3,2
+371,379,MT-4H,CR:mt4H,,Control Region,,,,,mt4 H-strand control element,1
+384,391,MT-3H,CR:mt3H,,Control Region,,,,,mt3 H-strand control element,1
+392,435,MT-LSP,CR:PL,,Control Region,,,,,L-strand promoter,5
+418,445,MT-TFL,CR:mtTF1,,Control Region,,,,,mtTF1 binding site,1
+438,574,MT-HV3,CR:HVS3,,Control Region,,,,,Hypervariable segment 3,2
+523,550,MT-TFH,CR:TFH,,Control Region,,,,,mtTF1 binding site,1
+545,567,MT-HSP1,CR:PH1,,Control Region,,,,,Major H-strand promoter,5
+577,647,MT-TF,F,TRNF,tRNA,,+,UCC,,tRNA phenylalanine,1
+645,645,MT-HSP2,PH2,,Noncoding,,,,,Minor H-strand promoter,3
+648,1601,MT-RNR1,12S,RNR1,rRNA,,+,,,12S ribosomal RNA,2
+1602,1670,MT-TV,V,MTTV,tRNA,,+,UGA,,tRNA valine,1
+1671,3229,MT-RNR2,16S,RNR2,rRNA,,+,,,16S ribosomal RNA,2
+2633,2705,MT-Hum,Humanin,,,,,,,Humanin peptide,3
+3206,3229,MT-RNR3,-,,Control Region,,,,,5S-like sequence,1
+3229,3256,MT-TER,-,,Control Region,,,,,Transcription terminator,4
+3230,3304,MT-TL1,L(UUA/G),TRNL1,tRNA,,+,UUA/G,,tRNA leucine 1,1
+3305,3306,MT-NC1,NC1,,Noncoding,,,,,non-coding nucleotides,0
+3307,4262,MT-ND1,ND1,ND1,Protein coding,ENST00000361390,+,,YP_003024026.1,NADH Dehydrogenase subunit 1,3
+4263,4331,MT-TI,I,TRNI,tRNA,,+,AUC,,tRNA isoleucine,1
+4329,4400,MT-TQ,Q,TRNQ,tRNA,,-,CAA,,tRNA glutamine,1
+4401,4401,MT-NC2,NC2,,Noncoding,,,,,non-coding nucleotides,0
+4402,4469,MT-TM,M,TRNM,tRNA,,+,AUG,,tRNA methionine,1
+4470,5511,MT-ND2,ND2,ND2,Protein coding,ENST00000361453,+,,YP_003024027.1,NADH dehydrogenase subunit 2,2
+5512,5579,MT-TW,W,TRNW,tRNA,,+,UGA,,tRNA tryptophan,1
+5580,5586,MT-NC3,NC3,,Noncoding,,,,,non-coding nucleotides,1
+5587,5655,MT-TA,A,TRNA,tRNA,,-,GCA,,tRNA alanine,1
+5656,5656,MT-NC4,NC4,,Noncoding,,,,,non-coding nucleotides,1
+5657,5729,MT-TN,N,TRNN,tRNA,,-,AAC,,tRNA asparagine,1
+5721,5798,MT-OLR,OL,,Control Region,,,,,L-strand origin,5
+5761,5826,MT-TC,C,TRNC,tRNA,,-,UGC,,tRNA cysteine,1
+5826,5891,MT-TY,Y,TRNY,tRNA,,-,UAC,,tRNA tyrosine,1
+5892,5903,MT-NC5,NC5,,Noncoding,,,,,non-coding nucleotides,0
+5904,7445,MT-CO1,COI,COX1,Protein coding,ENST00000361624,+,,YP_003024028.1,Cytochrome c oxidase subunit I,2
+7446,7514,MT-TS1,S(UCN),TRNS1,tRNA,,-,UCN,,tRNA serine 1,2
+7515,7517,MT-NC6,NC6,,Noncoding,,,,,non-coding nucleotides,0
+7518,7585,MT-TD,D,TRND,tRNA,,+,GAC,,tRNA aspartic acid,1
+7586,8269,MT-CO2,COII,COX2,Protein coding,ENST00000361739,+,,YP_003024029.1,Cytochrome c oxidase subunit II,1
+8270,8294,MT-NC7,NC7,,Noncoding,,,,,non-coding nucleotides,1
+8295,8364,MT-TK,K,TRNK,tRNA,,+,AAA,,tRNA lysine,1
+8365,8365,MT-NC8,NC8,,Noncoding,,,,,non-coding nucleotide,0
+8366,8572,MT-ATP8,ATPase8,ATP8,Protein coding,ENST00000361851,+,,YP_003024030.1,ATP synthase F0 subunit 8,2
+8527,9207,MT-ATP6,ATPase6,ATP6,Protein coding,ENST00000361899,+,,YP_003024031.1,ATP synthase F0 subunit 6,1
+9207,9990,MT-CO3,COIII,COX3,Protein coding,ENST00000362079,+,,YP_003024032.1,Cytochrome c oxidase subunit III,1
+9991,10058,MT-TG,G,TRNG,tRNA,,+,GGA,,tRNA glycine,1
+10059,10404,MT-ND3,ND3,ND3,Protein coding,ENST00000361227,+,,YP_003024033.1,NADH dehydrogenase subunit 3,2
+10405,10469,MT-TR,R,TRNR,tRNA,,+,CGA,,tRNA arginine,1
+10470,10766,MT-ND4L,ND4L,ND4L,Protein coding,ENST00000361335,+,,YP_003024034.1,NADH dehydrogenase subunit 4L,2
+10760,12137,MT-ND4,ND4,ND4,Protein coding,ENST00000361335,+,,YP_003024035.1,NADH dehydrogenase subunit 4,2
+12138,12206,MT-TH,H,TRNH,tRNA,,+,CAC,,tRNA histidine,1
+12207,12265,MT-TS2,S(AGY),TRNS2,tRNA,,+,AGY,,tRNA serine2,1
+12266,12336,MT-TL2,L(CUN),TRNL2,tRNA,,+,CUN,,tRNA leucine2,1
+12337,14148,MT-ND5,ND5,ND5,Protein coding,ENST00000361567,+,,YP_003024036.1,NADH dehydrogenase subunit 5,2
+14149,14673,MT-ND6,ND6,ND6,Protein coding,ENST00000361681,-,,YP_003024037.1,NADH dehydrogenase subunit 6,2
+14674,14742,MT-TE,E,TRNE,tRNA,,-,GAA,,tRNA glutamic acid,1
+14743,14746,MT-NC9,NC9,,Noncoding,,,,,non-coding nucleotides,0
+14747,15887,MT-CYB,Cytb,CYTB,Protein coding,ENST00000361789,+,,P_003024038.1,Cytochrome b,1
+15888,15953,MT-TT,T,TRNT,tRNA,,+,ACA,,tRNA threonine,1
+15925,499,MT-ATT,ATT,,Noncoding,,,,,membrane attachment site,2
+15954,15955,MT-NC10,NC10,,Noncoding,,,,,non-coding nucleotides,0
+15956,16023,MT-TP,P,TRNP,tRNA,,-,CCA,,tRNA proline,1
+16024,576,MT-CR,CR:Control Region,,Control Region,,,,,entire Control Region (including displacement loop),4
+16024,16383,MT-HV1,CR:HVS1/HV1,,Control Region,,,,,Hypervariable segment 1 [classic:16024-16365],3
+16081,16138,MT-TAS2,CR:TAS2,,Control Region,,,,,extended termination-associated sequence,2
+16106,191,MT-7SDNA,CR:7S-like,,Control Region,,,,,7S DNA,6
+16157,16172,MT-TAS,CR:TAS,,Control Region,,,,,termination-associated sequence,2
+16194,16208,MT-5,CR:mt5,,Control Region,,,,,control element,1
+16499,16506,MT-3L,CR:mt3L,,Control Region,,,,,L-strand control element,1
