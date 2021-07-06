@@ -5,10 +5,11 @@
 ## Notice
 * I hardcoded every input files required (as well as the output files) to run the process. If you want to use custom file paths, you need to change it manually in the code.
 * You will need to download manually the newer database files (and thus need to change the file paths in the scripts).
+* Some of the internal files generated during the process has already been included in the `data/` directory. However, there are still some files not included (due to large file sizes) and need to be generated from scripts.
 
 ## Brief
 
-This is a pathogenicity predictor of Mitochondrial SNV(Single Nucleotide Variation)s. Different regions of DNA are accounted for different functions. This work only considers two types of regions:
+This is a pathogenicity predictor of Mitochondrial SNV(Single Nucleotide Variation)s, using LGBM machine learning model. Different regions of DNA are accounted for different functions. This work only considers two types of regions:
 1. tRNA coding region
 2. Pretein coding region under the condition that the variant is non-synonymous.
 
@@ -41,42 +42,27 @@ The workflow is described as follows:
 
 2. Model Generation
 
-    * for tRNA Coding Region
+    * For tRNA roding region
         
         SNVs with ClinVar pathogenicity labels is used as the training dataset. The features include MitoTIP score, allele frequency, homoplasmy/heteroplasmy frequency, and PhyloTree level value.
     
         LGBMClassifier from LightGBM(https://lightgbm.readthedocs.io/en/latest/index.html) is chosen as the machine learning model.
-
-        To generate the prediction model, run:
-        ```
-        python3 train_tRNA_lgbm.py
-        ```
     
-    * for Protein Coding Region
+    * For protein coding region
 
         LGBMClassifier is chosen as the machine learning model. The features include scores collected in MitImpact database, allele frequency, homoplasmy/heteroplasmy frequency, and PhyloTree level value.
-
-        To generate the prediction model, run:
-        ```
-        python3 train_missense_pcg_lgbm.py
-        ```
 
 
 3. Prediction
 
-    * for tRNA Coding Region
+    * For tRNA coding region
 
-        To generation preciction file, run:
-        ```
-        python3 predict_tRNA.py
-        ```
+        The prediction range is **every SNV possible in the tRNA coding regions.**
 
-    * for Protein Coding Region
+    * For Protein coding region
 
-        To generation preciction file, run:
-        ```
-        python3 predict_missense_pcg.py
-        ```
+        The prediction range is **the entire MitImpact database's scope, which are the missense protein coding genes' SNVs.**
+
 
 ## How to Run
 
@@ -88,6 +74,7 @@ The workflow is described as follows:
     * MitImpact
         1. Download the MitImpact database file (https://mitimpact.css-mendel.it/cdn/MitImpact_db_3.0.6.txt.zip) into `downloads/`, unzip it and change the extension to .tsv.
         2. Run the `do_MitImpact.py` file in the `src_preprocessing/` directory.
+        3. For prediction, run `gen_MitImpact_all.py` file to generate preprocessed whole MitImpact files.
     * gnomAD allele homoplasmy/heteroplasmy frequency
         1. Download the gnamAD database file at https://gnomad.broadinstitute.org/downloads#v3-mitochondrial-dna into `downloads/`.
         2. Run the `do_gnomAD.py` file in the `src_preprocessing/` directory.
@@ -99,9 +86,37 @@ The workflow is described as follows:
     See [Files](#files) for more information on the files generated from the above scripts.
 
 
-2. Training & Prediction
+2. Model Generation
+
+    * For tRNA coding region
+        
+        To generate the prediction model, run:
+        ```
+        python3 train_tRNA_lgbm.py
+        ```
     
-    To train the machine learning model and use it for prediction, see the Training and Prediction sub-section in the [Process](#process) section.
+    * For protein coding region
+
+        To generate the prediction model, run:
+        ```
+        python3 train_missense_pcg_lgbm.py
+        ```
+
+3. Prediction
+
+    * For tRNA coding region
+
+        To generation preciction file, run:
+        ```
+        python3 predict_tRNA.py
+        ```
+
+    * For protein coding region
+
+        To generation preciction file, run:
+        ```
+        python3 predict_missense_pcg.py
+        ```
 
 
 ## Files
@@ -109,13 +124,17 @@ The workflow is described as follows:
     * Label files
         * `MitImpact_preprocessed`: preprocessed MitImpact file. Useless columns are removed and cell values are turned into numbers.
         * `Mit_gene_function_list.csv`: This file describes the functions of mito. gene regions, i.e., which region is for tRNA coding...
-        * `label_clinvar.json`: Pathogenicity labels of mito. SNVs extracted from ClinVar database
-        * `label_clinvar_tRNA.json`: Pathogenicity labels of tRNA coding region filtered from `label_clinvar.json`
+        * `label_clinvar.json`: Pathogenicity labels of mito. SNVs extracted from ClinVar database.
+        * `label_clinvar_tRNA.json`: Pathogenicity labels of tRNA coding region filtered from `label_clinvar.json`.
     * Feature files
         * `mitoTIP_score.json`: MitoTIP scores for tRNA coding region SNVs. This is from MITOMAP database.
         * `gbfreq_count.json`: GenBank allele frequency of polymorphisms. This is also from MITOMAP.
         * `gnomad_freq.json`: gnomAD homoplasmy/heteroplasmy frequency.
-        * phylotree_score.json: PhyloTree level values
+        * `phylotree_score.json`: PhyloTree level values.
+    * Others
+        * `tRNA_var_list.tsv`: list of possible SNVs in tRNA coding regions.
+    * Missing (file size too large; Can be generated from the scripts)
+        * `MitImpact_all_preprocessed`: preprocessed whole MitImpact file.
 
 * `src_preprocessing/`
     * This directory contains the preprocessing codes that extract features from original downloaded files from databases.
@@ -124,6 +143,11 @@ The workflow is described as follows:
     * This is the python script file that gererates the LGBM model for tRNA coding genes.
 * `train_missense_pcg_lgbm.py`
     * This is the python script file that gererates the LGBM model for missense protein coding genes.
+
+* `predict_tRNA.py`
+    * This is the python script file that gererates prediction result for tRNA coding genes.
+* `predict_missense_pcg.py`
+    * This is the python script file that gererates prediction result for missense protein coding genes.
 
 
 ## Contact
