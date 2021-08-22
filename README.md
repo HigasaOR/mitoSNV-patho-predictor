@@ -122,16 +122,16 @@ The workflow is described as follows:
 ## Files
 * `data/`
     * Label files
-        * `MitImpact_preprocessed`: preprocessed MitImpact file. Useless columns are removed and cell values are turned into numbers.
-        * `Mit_gene_function_list.csv`: This file describes the functions of mito. gene regions, i.e., which region is for tRNA coding...
-        * `label_clinvar.json`: Pathogenicity labels of mito. SNVs extracted from ClinVar database.
+        * `label_clinvar.json`: Pathogenicity labels of mito. SNVs extracted from ClinVar database. The original database file can be downloaded at https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz . This label json file can be extracted by using the `src_preprocessing/make_ClinVar_label_json.py` script. The database may be updated, so it is better to download a new version and extract the labels again over time.
         * `label_clinvar_tRNA.json`: Pathogenicity labels of tRNA coding region filtered from `label_clinvar.json`.
     * Feature files
+        * `MitImpact_preprocessed.tsv`: preprocessed MitImpact file. Useless columns are removed and cell values are turned into numbers.
         * `mitoTIP_score.json`: MitoTIP scores for tRNA coding region SNVs. This is from MITOMAP database.
         * `gbfreq_count.json`: GenBank allele frequency of polymorphisms. This is also from MITOMAP.
         * `gnomad_freq.json`: gnomAD homoplasmy/heteroplasmy frequency.
         * `phylotree_score.json`: PhyloTree level values.
     * Others
+        * `Mit_gene_function_list.csv`: This file describes the functions of mito. gene regions, i.e., which region is for tRNA coding... To know the original source of this file, please contact Dr. Ni-Chung Lee. (see [Contact](#contact) below)
         * `tRNA_var_list.tsv`: list of possible SNVs in tRNA coding regions.
     * Missing (file size too large; Can be generated from the scripts)
         * `MitImpact_all_preprocessed`: preprocessed whole MitImpact file.
